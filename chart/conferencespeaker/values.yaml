@@ -37,4 +37,4 @@ base:
 istio:
   enabled: false
   weight: 100
-test: false
+test: true
