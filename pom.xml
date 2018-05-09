@@ -69,10 +69,11 @@
                             <jvmOptionsFile>${basedir}/src/main/liberty/config/jvm.options</jvmOptionsFile>
 							<packageFile>${package.file}</packageFile>
 							<include>${packaging.type}</include>
-							<bootstrapProperties>
-								<default.http.port>${testServerHttpPort}</default.http.port>
-								<default.https.port>${testServerHttpsPort}</default.https.port>
-							</bootstrapProperties>
+                           <bootstrapProperties>
+                                <default.http.port>${testServerHttpPort}</default.http.port>
+                                <default.https.port>${testServerHttpsPort}</default.https.port>
+                                <app.location>${project.artifactId}-${project.version}.war</app.location>
+                            </bootstrapProperties>							
 							<installAppPackages>project</installAppPackages>
 						</configuration>
 					</plugin>
@@ -269,5 +270,27 @@
 			<version>1.0</version>
 			<scope>provided</scope>
 		</dependency>
+        <!-- Configure javametrics monitoring Dependencies -->
+        <dependency>
+            <groupId>com.ibm.runtimetools</groupId>
+            <artifactId>javametrics-agent</artifactId>
+            <version>[1.2,2.0)</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.runtimetools</groupId>
+            <artifactId>javametrics-dash</artifactId>
+            <version>[1.2,2.0)</version>
+            <scope>provided</scope>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.runtimetools</groupId>
+            <artifactId>javametrics-rest</artifactId>
+            <version>[1.2,2.0)</version>
+            <scope>provided</scope>
+            <type>war</type>
+        </dependency>
+        <!-- End Configuring javametrics monitoring Dependencies -->
 	</dependencies>
 </project>
